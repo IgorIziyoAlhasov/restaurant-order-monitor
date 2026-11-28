@@ -22,6 +22,7 @@ export default defineConfig({
     command: "npm run start -- --hostname 127.0.0.1 --port 3200",
     url: "http://127.0.0.1:3200",
     reuseExistingServer: false,
+    env: { ROM_DEMO_MODE: "1" },
   },
   projects: [
     {

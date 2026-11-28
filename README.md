@@ -29,3 +29,7 @@ Playwright starts its own production server on port 3200. Reports are written to
 ## Architecture
 
 Next.js App Router, React, JavaScript, Tailwind CSS, SCSS and TanStack Query. Local demo reads are served by a deterministic fixture provider. Staff authentication, authoritative order processing and shared backend integration are future phases. See docs/PHASE-0.md.
+
+## Phase 2 local staff demo
+
+Copy `.env.example` to `.env.local` before starting the app. Select Manager (two restaurants) or Kitchen staff (Olive & Ember only). The synthetic session is server-side and expires after eight hours or a server restart. The orders API checks membership on every request. Sign out revokes the local session. Demo mode is explicitly opt-in and must never be enabled with real data. Live Supabase authentication and database integration are not yet connected.

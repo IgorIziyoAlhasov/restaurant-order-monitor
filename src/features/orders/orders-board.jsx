@@ -4,12 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { usePreferences } from "../../locales/preferences";
-import {
-  fetchDemoOrders,
-  ordersInQueue,
-  orderTotal,
-  queues,
-} from "./demo-orders";
+import { ordersInQueue, orderTotal, queues } from "./demo-orders";
 
 function OrderCard({ order, onSelect }) {
   const { copy, language } = usePreferences();
@@ -84,11 +79,18 @@ function OrderDetails({ order, onClose, dialogRef }) {
   );
 }
 
-export function OrdersBoard() {
+export function OrdersBoard({ location }) {
   const { copy } = usePreferences();
   const { data, isPending, isError, refetch, isFetching } = useQuery({
-    queryKey: ["orders", "olive-and-ember"],
-    queryFn: fetchDemoOrders,
+    queryKey: ["orders", location],
+    queryFn: async () => {
+      const response = await fetch(
+        "/api/orders?location=" + encodeURIComponent(location),
+        { cache: "no-store" },
+      );
+      if (!response.ok) throw new Error("Orders unavailable");
+      return response.json();
+    },
   });
   const [selected, setSelected] = useState(null);
   const dialog = useRef(null);

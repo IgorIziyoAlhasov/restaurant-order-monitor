@@ -5,6 +5,7 @@ test("ROM-FND-002 shows synthetic queues and order details", async ({
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "Manager", exact: true }).click();
   await expect(
     page.getByRole("heading", { name: "Orders", exact: true }),
   ).toBeVisible();
@@ -24,6 +25,7 @@ test("ROM-FND-003 and ROM-FND-004 persist RTL and theme settings", async ({
   page,
 }) => {
   await page.goto("/");
+  await page.getByRole("button", { name: "Manager", exact: true }).click();
   await page.getByLabel("Language").selectOption("he");
   await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
   await page.getByLabel("ערכת נושא").selectOption("dark");

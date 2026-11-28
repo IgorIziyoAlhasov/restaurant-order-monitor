@@ -1,5 +1,13 @@
 export const messages = {
   en: {
+    signIn: "Sign in",
+    signOut: "Sign out",
+    manager: "Manager",
+    kitchen: "Kitchen staff",
+    demoLogin: "Choose a synthetic staff account. No real customer data.",
+    unavailable: "Authentication is not configured.",
+    authError: "Authentication request failed.",
+
     title: "Restaurant Monitor",
     demo: "Demo workspace",
     location: "Restaurant",
@@ -26,6 +34,14 @@ export const messages = {
     skip: "Skip to content",
   },
   he: {
+    signIn: "כניסה",
+    signOut: "יציאה",
+    manager: "מנהל",
+    kitchen: "צוות מטבח",
+    demoLogin: "בחר חשבון הדגמה. ללא נתוני לקוחות אמיתיים.",
+    unavailable: "האימות אינו מוגדר.",
+    authError: "בקשת האימות נכשלה.",
+
     title: "מערכת הזמנות למסעדה",
     demo: "סביבת הדגמה",
     location: "מסעדה",
@@ -52,6 +68,15 @@ export const messages = {
     skip: "דלג לתוכן",
   },
   ru: {
+    signIn: "Войти",
+    signOut: "Выйти",
+    manager: "Менеджер",
+    kitchen: "Сотрудник кухни",
+    demoLogin:
+      "Выберите демонстрационную учётную запись. Без реальных данных клиентов.",
+    unavailable: "Аутентификация не настроена.",
+    authError: "Ошибка аутентификации.",
+
     title: "Монитор заказов",
     demo: "Демонстрационный режим",
     location: "Ресторан",

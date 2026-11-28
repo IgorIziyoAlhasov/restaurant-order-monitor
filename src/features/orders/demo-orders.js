@@ -34,8 +34,17 @@ const fixtures = [
   },
 ];
 
-export async function fetchDemoOrders() {
-  return structuredClone(fixtures);
+export async function fetchDemoOrders(location = "olive-and-ember") {
+  if (location === "noodle-yard")
+    return [
+      {
+        id: "2042",
+        status: "submitted",
+        time: "12:40",
+        items: [{ name: "Noodles", quantity: 1, price: 4800 }],
+      },
+    ];
+  return location === "olive-and-ember" ? structuredClone(fixtures) : [];
 }
 
 export function orderTotal(order) {
